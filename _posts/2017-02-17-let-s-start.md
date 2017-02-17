@@ -4,7 +4,6 @@ published: true
 ---
 layout: post
 title:  "Let's start"
-categories: 
 tags: Github
 ---
 

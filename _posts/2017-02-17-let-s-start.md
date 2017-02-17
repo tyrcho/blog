@@ -1,6 +1,10 @@
 ---
-published: false
+published: true
 ---
+* content
+{:toc}
+
+
 ## A New Blog
 
 I've decided to start writing a technical blog.

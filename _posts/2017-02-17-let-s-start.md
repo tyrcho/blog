@@ -1,10 +1,6 @@
 ---
 published: true
----
----
-layout: post
 title:  "Let's start"
-tags: Github
 ---
 
 

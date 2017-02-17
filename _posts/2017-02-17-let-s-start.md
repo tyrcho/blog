@@ -1,6 +1,5 @@
 ---
-layout: blog
-category: blog
+layout: post
 published: true
 title: Let's start
 ---

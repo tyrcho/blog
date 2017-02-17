@@ -1,6 +1,8 @@
 ---
+layout: blog
+category: blog
 published: true
-title:  "Let's start"
+title: Let's start
 ---
 
 
@@ -24,16 +26,17 @@ I'll try to post here at least once a week.
 
 Github source project : <https://github.com/tyrcho/blog>
 
-Markdown content of this post (to prove it's rather easy to write / update) :
+### prose.io
+
+I've just noticed that it can be useful to tweak a section in the `_config.yml` at the root of the project to help prose.io display / edit the metadata of your posts and pages.
+
+A good sample can be found [here](https://github.com/prose/starter/blob/gh-pages/_config.yml) and is documented on [prose.io Wiki](https://github.com/prose/prose/wiki/Getting-Started).
+
+### Markdown content of this post 
+
+To prove it's rather easy to write / update :
 
 ```markdown
----
-layout: post
-title:  "Let's start"
-categories: 
-tags: Github
----
-
 
 * content
 {:toc}

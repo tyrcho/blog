@@ -17,7 +17,7 @@ permalink: /:year/:month/:day/:title/
 github_username: tyrcho
 linkedIn_username: micheldaviot
 
-description_footer: footer placeholder
+description_footer: 
 
 # comments
 # two ways to comment, only choose one, and use your own short name

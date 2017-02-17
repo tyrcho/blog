@@ -9,7 +9,7 @@
 title: Tyrcho's Blog
 brief-intro: Software Architect, Agile Coach, Scala Enthusiast
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://tyrcho.github.io/nlog" # the base hostname & protocol for your site
+url: "https://tyrcho.github.io/blog" # the base hostname & protocol for your site
 
 permalink: /:year/:month/:day/:title/
 

@@ -8,8 +8,8 @@
 # Site settings
 title: Tyrcho's Blog
 brief-intro: Software Architect, Agile Coach, Scala Enthusiast
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://tyrcho.github.io/blog" # the base hostname & protocol for your site
+baseurl: "/blog" # the subpath of your site, e.g. /blog
+url: "https://tyrcho.github.io" # the base hostname & protocol for your site
 
 permalink: /:year/:month/:day/:title/
 

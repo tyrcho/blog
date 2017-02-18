@@ -20,9 +20,7 @@ linkedIn_username: micheldaviot
 description_footer: 
 
 # comments
-# two ways to comment, only choose one, and use your own short name
-# 两种评论插件，选一个就好了，使用自己的 short_name
-disqus_shortname: #blog-tyrcho
+disqus_shortname: blog-tyrcho
 
 # statistic analysis 统计代码
 # hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";

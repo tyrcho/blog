@@ -48,28 +48,3 @@ excerpt_separator: "\n\n\n\n"
 gems: [jekyll-paginate]
 paginate: 6
 
-
-prose:
-  rooturl: '_posts'
-  siteurl: 'http://tyrcho.github.io/blog/'
-  relativeLinks: 'http://tyrcho.github.io/blog/links.jsonp'
-  media: 'media'
-  metadata:
-    _posts:
-      - name: "layout"
-        field:
-          element: "text"
-          value: "post"
-      - name: "title"
-        field:
-          element: "text"
-          label: "Title"
-          value: ""
-      - name: "tags"
-        field:
-          element: "multiselect"
-          label: "Add Tags"
-          placeholder: "Choose Tags"
-          options:
-            - name: "Scala"
-              value: "scala"

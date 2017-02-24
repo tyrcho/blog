@@ -1,5 +1,7 @@
 ---
 published: true
+tags: scala test
+title: Property Based Testing when preparing for Google Hashcode
 ---
 ## Property Based Testing when preparing for Google Hashcode
 

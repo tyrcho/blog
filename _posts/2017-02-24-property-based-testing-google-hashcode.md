@@ -29,7 +29,7 @@ I was concerned about the performance of this code and I wanted to rewrite it us
 
 I wanted to be sure to avoid regressions and that the new implementation of `intersects` returns the same result of the old one in all cases.
 
-This can be achieved easily with property based testing and the [ScalaCheck](https://www.scalacheck.org/) framework.
+This can be achieved easily with property based testing and the [ScalaCheck](https://www.scalacheck.org/) framework ([integrated with ScalaTest](http://www.scalatest.org/user_guide/writing_scalacheck_style_properties)).
 
 Here is the basic test I wanted to write :
 
@@ -99,3 +99,7 @@ implicit val shrinkSlice: Shrink[Slice] = Shrink {
   } yield Slice(a1, b1, c1, d1)
 }
 ```
+
+### Configuration
+
+ScalaTest has a specific default config for ScalaCheck : it only generates 5 instances before considering the test passing and 

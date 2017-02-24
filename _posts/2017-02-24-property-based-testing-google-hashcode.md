@@ -27,3 +27,16 @@ case class Slice(row1: Int, row2: Int, col1: Int, col2: Int) {
 
 I was concerned about the performance of this code and I wanted to rewrite it using only the col and row indices.
 
+I wanted to be sure to avoid regressions and that the new implementation of `interesects` returns the same result of the old one in all cases.
+
+This can be achieved easily with property based testing and the [ScalaCheck](https://www.scalacheck.org/) framework.
+
+Here is the basic test I wanted to write :
+
+```scala
+"2 Slices" should "intersect properly" in {
+  forAll { (slice1: Slice, slice2: Slice) =>
+    slice1.intersects(slice2) shouldBe slice1.cells.exists(slice2.cells.contains)
+  }
+}
+```

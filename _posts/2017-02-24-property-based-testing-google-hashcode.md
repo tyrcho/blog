@@ -3,4 +3,6 @@ published: false
 ---
 ## Property Based Testing when preparing for Google Hashcode
 
-Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
+This week was the qualification round for [Google Hashcode 2017](https://hashcode.withgoogle.com/).
+
+In order to prepare a bit, I did the training exercise that

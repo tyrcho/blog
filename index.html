@@ -88,7 +88,7 @@ published: true
                 <ul class="content-ul" cate>
                     {% for category in site.categories %}
                     <li>
-                        <a href="{{ root_url }}/{{ site.category_dir }}#{{ category | first }}" class="categories-list-item" cate="{{ category | first }}">
+                        <a href="{{ root_url  | prepend: site.baseurl }}/{{ site.category_dir }}#{{ category | first }}" class="categories-list-item" cate="{{ category | first }}">
                             <span class="name">
                                 {{ category | first }}
                             </span>
@@ -98,7 +98,7 @@ published: true
                     {% endfor %}
                 </ul>
             </div>
-            <!-- 其他div框放到这里 -->
+            
             <div class="side">
                 <div>
                     <i class="fa fa-tags"></i>
@@ -138,22 +138,11 @@ published: true
                       {% else %}
                         {% assign color = 8 | minus: base %}
                       {% endif %}
-                      <a href="{{ root_url }}/{{ site.tag_dir }}#{{ tag[0] }}" style="font-size: {{ size }}pt; color: #{{ color }}{{ color }}{{ color }};">{{ tag[0] }}</a>
+                      <a href="{{ root_url  | prepend: site.baseurl }}/{{ site.tag_dir }}#{{ tag[0] }}" style="font-size: {{ size }}pt; color: #{{ color }}{{ color }}{{ color }};">{{ tag[0] }}</a>
                     {% endfor %}
                 </div>
             </div>
-
-            <!-- <div class="side">
-                <div>
-                    <i class="fa fa-external-link"></i>
-                    Links
-                </div>
-                <ul  class="content-ul">
-
-                </ul>
-            </div> -->
         </div>
     </div>
 </div>
-<!-- <script src="{{ "/js/scroll.min.js " | prepend: site.baseurl }}" charset="utf-8"></script> -->
-<!-- <script src="{{ "/js/pageContent.js " | prepend: site.baseurl }}" charset="utf-8"></script> -->
+

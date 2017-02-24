@@ -41,7 +41,7 @@ Here is the basic test I wanted to write :
 }
 ```
 
-By adding [scalacheck-shapeless](https://github.com/alexarchambault/scalacheck-shapeless) as described in this [sample project](https://github.com/tyrcho/scalatest-scalacheck-demo) :
+By adding [scalacheck-shapeless](https://github.com/alexarchambault/scalacheck-shapeless) as described in this [sample project](https://github.com/tyrcho/scalatest-scalacheck-demo), we can have ScalaCheck generate automatically instances of case classes. 
 ```xml
 <dependency>
   <groupId>com.github.alexarchambault</groupId>
@@ -49,4 +49,19 @@ By adding [scalacheck-shapeless](https://github.com/alexarchambault/scalacheck-s
   <version>1.1.1</version>
   <scope>test</scope>
 </dependency>
+```
+
+But this is not very usefull here since a `Slice` only makes sense for specific rows and cols.
+
+So it's better to control the generation of our own `Slice`s, with rows and cols between 1 and 200, and be sure that `row2 > row1`.
+
+```scala
+implicit val arbitrarySlice = Arbitrary {
+  for {
+    row1 <- Gen.chooseNum(1, 200)
+    row2 <- Gen.chooseNum(row1 + 1, 200)
+    col1 <- Gen.chooseNum(1, 200)
+    col2 <- Gen.chooseNum(col1 + 1, 200)
+  } yield Slice(row1, row2, col1, col2)
+}
 ```

@@ -3,6 +3,8 @@ published: true
 ---
 ## Property Based Testing when preparing for Google Hashcode
 
+### Problem Overview
+
 This week was the qualification round for [Google Hashcode 2017](https://hashcode.withgoogle.com/).
 
 In order to prepare a bit, I started working on the practice problem : [Slice the Pizza]({{site.baseurl}}/assets/pizza.pdf).
@@ -25,9 +27,11 @@ case class Slice(row1: Int, row2: Int, col1: Int, col2: Int) {
 }
 ```
 
-I was concerned about the performance of this code and I wanted to rewrite it using only the col and row indices.
+I was concerned about the performance of this code and I wanted to rewrite it using only the `col` and `row` indices.
 
-I wanted to be sure to avoid regressions and that the new implementation of `intersects` returns the same result of the old one in all cases.
+### Property Based Testing
+
+I wanted to be sure to avoid regressions and that the new implementation of `intersects` returns the same result as the old one in all cases.
 
 This can be achieved easily with property based testing and the [ScalaCheck](https://www.scalacheck.org/) framework ([integrated with ScalaTest](http://www.scalatest.org/user_guide/writing_scalacheck_style_properties)).
 
@@ -40,6 +44,8 @@ Here is the basic test I wanted to write :
   }
 }
 ```
+
+### Generating test instances of `Slice`
 
 By adding [scalacheck-shapeless](https://github.com/alexarchambault/scalacheck-shapeless) as described in this [sample project](https://github.com/tyrcho/scalatest-scalacheck-demo), we can have ScalaCheck generate automatically instances of case classes. 
 ```xml
@@ -66,6 +72,8 @@ implicit val arbitrarySlice = Arbitrary {
 }
 ```
 
+### New implementation of `intersects`
+
 With this in place, I can change the implementation of `intersects`. I made several tries before arriving to this one, hence the utility of my test !
 
 ```scala
@@ -83,8 +91,6 @@ I could check that it is really faster with a [ScalaMeter](https://scalameter.gi
 
 You can find the [full test file](https://github.com/wl-seclin-hashcode/hashcode-2017-practice/blob/master/src/test/scala/hashcode/training/SliceSpec.scala) on my [Github project](https://github.com/wl-seclin-hashcode/hashcode-2017-practice). 
 
-2 points worth mentioning :
-
 ### Shrinking
 
 ScalaCheck can perform "shrinking" on the instances generated which fail your test. 
@@ -99,7 +105,3 @@ implicit val shrinkSlice: Shrink[Slice] = Shrink {
   } yield Slice(a1, b1, c1, d1)
 }
 ```
-
-### Configuration
-
-ScalaTest has a specific default config for ScalaCheck : it only generates 5 instances before considering the test passing and 

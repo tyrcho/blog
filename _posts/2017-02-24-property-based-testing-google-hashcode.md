@@ -87,9 +87,7 @@ With this in place, I can change the implementation of `intersects`. I made seve
   }
 ```
 
-I could check that it is really faster with a [ScalaMeter](https://scalameter.github.io/) microbenchmark but this is another story.
-
-You can find the [full test file](https://github.com/wl-seclin-hashcode/hashcode-2017-practice/blob/master/src/test/scala/hashcode/training/SliceSpec.scala) on my [Github project](https://github.com/wl-seclin-hashcode/hashcode-2017-practice). 
+I could have checked that the new implementation is really faster with a [ScalaMeter](https://scalameter.github.io/) microbenchmark but this is another story.
 
 ### Shrinking
 
@@ -105,3 +103,5 @@ implicit val shrinkSlice: Shrink[Slice] = Shrink {
   } yield Slice(a1, b1, c1, d1)
 }
 ```
+
+You can find the [full test file](https://github.com/wl-seclin-hashcode/hashcode-2017-practice/blob/master/src/test/scala/hashcode/training/SliceSpec.scala) on my [Github project](https://github.com/wl-seclin-hashcode/hashcode-2017-practice). 

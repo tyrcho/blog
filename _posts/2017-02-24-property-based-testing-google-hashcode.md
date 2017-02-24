@@ -87,7 +87,10 @@ You can find the [full test file](https://github.com/wl-seclin-hashcode/hashcode
 
 ### Shrinking
 
-ScalaCheck can perform "shrinking" on the instances generated which fail your test. It does it automatically for basic types (Lists, Int ...) but you need to provide a Shrinker for your own classes :
+ScalaCheck can perform "shrinking" on the instances generated which fail your test. 
+This gives you better error messages with simpler instances.
+
+It does it automatically for basic types (`List`s, `Int` ...) but you need to provide a `Shrink`er for your own classes. It's rather simple when you reuse the existing `shrink` method which takes a Tuple.
 
 ```scala
 implicit val shrinkSlice: Shrink[Slice] = Shrink {

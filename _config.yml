@@ -22,9 +22,6 @@ description_footer:
 # comments
 disqus_shortname: blog-tyrcho
 
-# statistic analysis 统计代码
-# hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
-# xxxxx字符串
 google_analytics_id: UA-TODO
 
 # Build settings
@@ -32,7 +29,7 @@ markdown: kramdown
 
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
+  syntax_highlighter: pygments
 
 # port
 # port: 1234
@@ -47,4 +44,3 @@ excerpt_separator: "\n\n\n\n"
 # paginate
 gems: [jekyll-paginate]
 paginate: 6
-

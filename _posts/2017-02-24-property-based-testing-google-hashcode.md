@@ -27,7 +27,7 @@ case class Slice(row1: Int, row2: Int, col1: Int, col2: Int) {
 
 I was concerned about the performance of this code and I wanted to rewrite it using only the col and row indices.
 
-I wanted to be sure to avoid regressions and that the new implementation of `interesects` returns the same result of the old one in all cases.
+I wanted to be sure to avoid regressions and that the new implementation of `intersects` returns the same result of the old one in all cases.
 
 This can be achieved easily with property based testing and the [ScalaCheck](https://www.scalacheck.org/) framework.
 
@@ -65,3 +65,20 @@ implicit val arbitrarySlice = Arbitrary {
   } yield Slice(row1, row2, col1, col2)
 }
 ```
+
+With this in place, I can change the implementation of `intersects`. I made several tries before arriving to this one, hence the utility of my test !
+
+```scala
+ def intersects(that: Slice) = {
+    @inline def between(a: Int, b: Int, x: Int) = x >= a && x <= b
+    @inline def intersects1d(x1: Int, x2: Int, a1: Int, a2: Int) =
+      between(x1, x2, a1) || between(x1, x2, a2) ||
+        between(a1, a2, x1) || between(a1, a2, x2)
+
+    intersects1d(col1, col2 - 1, that.col1, that.col2 - 1) && intersects1d(row1, row2 - 1, that.row1, that.row2 - 1)
+  }
+```
+
+I could check that it is really faster with a [ScalaMeter](https://scalameter.github.io/) microbenchmark but this will another story.
+
+You can find the [full test file](https://github.com/wl-seclin-hashcode/hashcode-2017-practice/blob/master/src/test/scala/hashcode/training/SliceSpec.scala) on my [Github project](https://github.com/wl-seclin-hashcode/hashcode-2017-practice). 

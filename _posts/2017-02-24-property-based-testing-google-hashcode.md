@@ -40,3 +40,13 @@ Here is the basic test I wanted to write :
   }
 }
 ```
+
+By adding [scalacheck-shapeless](https://github.com/alexarchambault/scalacheck-shapeless) as described in this [sample project](https://github.com/tyrcho/scalatest-scalacheck-demo) :
+```xml
+<dependency>
+  <groupId>com.github.alexarchambault</groupId>
+  <artifactId>scalacheck-shapeless_1.13_2.11</artifactId>
+  <version>1.1.1</version>
+  <scope>test</scope>
+</dependency>
+```

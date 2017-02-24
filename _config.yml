@@ -29,9 +29,8 @@ markdown: kramdown
 
 kramdown:
   input: GFM
-  syntax_highlighter: pygments
+  syntax_highlighter: rouge
 
-highlighter: pygments
 
 # port
 # port: 1234

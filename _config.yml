@@ -22,7 +22,7 @@ description_footer:
 # comments
 disqus_shortname: blog-tyrcho
 
-google_analytics_id: UA-TODO
+google_analytics_id: UA-30582373
 
 # Build settings
 markdown: kramdown
